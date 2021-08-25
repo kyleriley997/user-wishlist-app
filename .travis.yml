@@ -10,7 +10,7 @@ after_success:
   - "docker push kriley17/user-wishlist"
 deploy: 
   access_key_id: $AWS_ACCESS_KEY
-  app: kyle-wishlist-app
+  app: "kyle-wishlist-app"
   bucket_name: multi-cont-wish-app-kyle
   bucket_path: docker
   env: Kylewishlistapp-env
