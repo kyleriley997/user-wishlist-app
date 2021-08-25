@@ -1,7 +1,8 @@
+--- 
 after_success: 
-  - "docker build -t kriley17/user-wishlist-app ."
+  - "docker build -t kriley17/user-wishlist ."
   - "echo \"$DOCKER_PASSWORD\" | docker login -u \"$DOCKER_ID\" --password-stdin"
-  - "docker push kriley17/user-wishlist-app"
+  - "docker push kriley17/user-wishlist"
 deploy: 
   access_key_id: $AWS_ACCESS_KEY
   app: kyle-wishlist-app
