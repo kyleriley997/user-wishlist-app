@@ -1,6 +1,8 @@
 language: generic
 services: 
   - docker
+script:
+  - "echo testing && ls"
 after_success: 
   - "docker build -t kriley17/user-wishlist ."
   - "echo \"$DOCKER_PASSWORD\" | docker login -u \"$DOCKER_ID\" --password-stdin"
