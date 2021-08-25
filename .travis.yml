@@ -1,0 +1,23 @@
+language: generic
+
+services:
+  - docker
+
+after_success:
+  - docker build -t kriley17/user-wishlist-app .
+
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  - docker push kriley17/user-wishlist-app
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: kyle-wishlist-app
+  env: Kylewishlistapp-env
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket_name: "multi-cont-wish-app-kyle"
+  bucket_path: "docker"
+  on:
+    branch: multi-cont-app
