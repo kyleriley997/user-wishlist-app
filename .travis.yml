@@ -11,9 +11,9 @@ after_success:
 deploy: 
   access_key_id: $AWS_ACCESS_KEY
   app: "kyle-wishlist-app"
-  bucket_name: multi-cont-wish-app-kyle
+  bucket_name: "multi-cont-wish-app-kyle"
   bucket_path: docker
-  env: Kylewishlistapp-env
+  env: "Kylewishlistapp-env"
   provider: elasticbeanstalk
   region: us-east-2
   secret_access_key: $AWS_SECRET_KEY
