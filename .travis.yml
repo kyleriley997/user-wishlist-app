@@ -14,7 +14,7 @@ deploy:
   bucket_path: docker
   env: Kylewishlistapp-env
   provider: elasticbeanstalk
-  region: us-east-1
+  region: us-east-2
   secret_access_key: $AWS_SECRET_KEY
   true: 
     branch: multi-cont-app
