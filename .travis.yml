@@ -17,5 +17,6 @@ deploy:
   provider: elasticbeanstalk
   region: us-east-2
   secret_access_key: $AWS_SECRET_KEY
+  skip_cleanup: true
   true: 
     branch: multi-cont-app
