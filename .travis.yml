@@ -1,4 +1,6 @@
---- 
+language: generic
+services: 
+  - docker
 after_success: 
   - "docker build -t kriley17/user-wishlist ."
   - "echo \"$DOCKER_PASSWORD\" | docker login -u \"$DOCKER_ID\" --password-stdin"
@@ -14,6 +16,3 @@ deploy:
   secret_access_key: $AWS_SECRET_KEY
   true: 
     branch: multi-cont-app
-language: generic
-services: 
-  - docker
