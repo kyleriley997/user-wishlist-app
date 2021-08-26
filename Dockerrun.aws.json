@@ -20,7 +20,7 @@
             "containerPath": "/var/lib/postgreql/data/",
             "sourceVolume": "postgres_data"
         }],
-        "name": "POSTGRES_DB",
+        "name": "db",
         "portMappings": [{
             "containerPort": 5432,
             "hostPart": 5432
