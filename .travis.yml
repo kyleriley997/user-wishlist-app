@@ -1,22 +1,20 @@
 language: python
-install: pip install --upgrade pip
+install: skip
 services: 
   - docker
 script:
-  - "echo testing && ls"
-after_success: 
   - "docker build -t kriley17/user-wishlist ."
+after_success: 
   - "echo \"$DOCKER_PASSWORD\" | docker login -u \"$DOCKER_ID\" --password-stdin"
   - "docker push kriley17/user-wishlist"
 deploy: 
   access_key_id: $AWS_ACCESS_KEY
   app: "kyle-wishlist-app"
-  bucket_name: "multi-cont-wish-app-kyle"
+  bucket_name: multi-cont-wish-app-kyle
   bucket_path: docker
-  env: "Kylewishlistapp-env"
+  env: Kylewishlistapp-env
   provider: elasticbeanstalk
   region: us-east-2
   secret_access_key: $AWS_SECRET_KEY
-  skip_cleanup: true
   true: 
     branch: multi-cont-app
